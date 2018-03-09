@@ -65,7 +65,6 @@ export const adoptCat = () => dispatch => {
     })
     .then(cat => {
       dispatch(adoptCatSuccess(cat));
-      console.log('success');
       dispatch(fetchCat());
     })
     .catch(err => {

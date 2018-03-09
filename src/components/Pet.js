@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from 'react-spinkit';
 
 const Pet = props => {
   if (props.petToAdopt) {
@@ -29,7 +30,7 @@ const Pet = props => {
   else {
     return( 
       <div>
-        Loading
+        <Spinner name='circle' fadeIn='none' />
       </div>
     );
   }
