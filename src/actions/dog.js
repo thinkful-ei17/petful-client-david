@@ -1,4 +1,4 @@
-// import {API_BASE_URL} from '../config';
+import {REACT_APP_API_BASE_URL} from '../config';
 
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
 export const fetchDogRequest = () => ({
@@ -19,7 +19,7 @@ export const fetchDogError = error => ({
 
 export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
-  fetch('/api/dog')
+  fetch(`${REACT_APP_API_BASE_URL}/dog`)
     .then(res => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
@@ -54,7 +54,7 @@ export const adoptDogError = error => ({
 
 export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
-  fetch('/api/dog', {
+  fetch(`${REACT_APP_API_BASE_URL}/dog`, {
     method: 'DELETE',
   })
     .then(res => {

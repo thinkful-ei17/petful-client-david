@@ -1,4 +1,4 @@
-// import {API_BASE_URL} from '../config';
+import {REACT_APP_API_BASE_URL} from '../config';
 
 export const FETCH_CAT_REQUEST = 'FETCH_CAT_REQUEST';
 export const fetchCatRequest = () => ({
@@ -19,7 +19,7 @@ export const fetchCatError = error => ({
 
 export const fetchCat = () => dispatch => {
   dispatch(fetchCatRequest());
-  fetch('/api/cat')
+  fetch(`${REACT_APP_API_BASE_URL}/cat`)
     .then(res => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
@@ -54,7 +54,7 @@ export const adoptCatError = error => ({
 
 export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
-  fetch('/api/cat', {
+  fetch(`${REACT_APP_API_BASE_URL}/cat`, {
     method: 'DELETE',
   })
     .then(res => {
