@@ -44,6 +44,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        data: null,
         error: null
       }
     case ADOPT_DOG_ERROR:

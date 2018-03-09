@@ -2,6 +2,13 @@ import React from 'react';
 import Spinner from 'react-spinkit';
 
 const Pet = props => {
+  if (props.petToAdopt === null) {
+    return (
+      <div>
+        Empty
+      </div>
+    )
+  }
   if (props.petToAdopt) {
     return (
       <div className='pet'>
