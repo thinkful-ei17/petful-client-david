@@ -18,9 +18,11 @@ export const fetchCatError = error => ({
 });
 
 export const fetchCat = () => dispatch => {
+  console.log(REACT_APP_API_BASE_URL);
   dispatch(fetchCatRequest());
   fetch(`${REACT_APP_API_BASE_URL}/cat`)
     .then(res => {
+      console.log(res);
       if (!res.ok) {
         return Promise.reject('Something went wrong');
       }
@@ -30,6 +32,7 @@ export const fetchCat = () => dispatch => {
       dispatch(fetchCatSuccess(cat));
     })
     .catch(err => {
+      console.error(err);
       dispatch(fetchCatError(err));
     });
 };
