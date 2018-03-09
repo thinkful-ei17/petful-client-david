@@ -41,9 +41,8 @@ export const adoptCatRequest = () => ({
 });
 
 export const ADOPT_CAT_SUCCESS = 'ADOPT_CAT_SUCCESS';
-export const adoptCatSuccess = cat => ({
-  type: ADOPT_CAT_SUCCESS,
-  cat
+export const adoptCatSuccess = () => ({
+  type: ADOPT_CAT_SUCCESS
 });
 
 export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
@@ -61,10 +60,10 @@ export const adoptCat = () => dispatch => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
       }
-      return res.json();
+      return res;
     })
-    .then(cat => {
-      dispatch(adoptCatSuccess(cat));
+    .then(() => {
+      dispatch(adoptCatSuccess());
       dispatch(fetchCat());
     })
     .catch(err => {

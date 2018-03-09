@@ -44,7 +44,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: action.cat,
         error: null
       }
     case ADOPT_CAT_ERROR:

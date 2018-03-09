@@ -21,7 +21,7 @@ const Pet = props => {
               <dt>Story:</dt>
               <dd>{props.petToAdopt.story}</dd>
             </dl>
-            <button onClick={props.onAdoptPet}>Adapt</button>
+            <button onClick={props.onAdoptPet}>Adopt</button>
           </main>
         </section>
       </div>
