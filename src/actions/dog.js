@@ -60,7 +60,7 @@ export const adoptDog = () => dispatch => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
       }
-      return res.json();
+      return res;
     })
     .then(() => {
       dispatch(adoptDogSuccess());
