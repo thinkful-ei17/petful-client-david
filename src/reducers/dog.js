@@ -53,5 +53,7 @@ export default (state = initialState, action) => {
         loading: false,
         error: action.error
       }
+    default:
+      return state
   }
 }
